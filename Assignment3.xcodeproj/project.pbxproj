@@ -14,6 +14,12 @@
 		E5B65B4B2CBF09620007C626 /* MortControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B65B482CBF09620007C626 /* MortControlView.swift */; };
 		E5B65B4C2CBF09620007C626 /* TabControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B65B492CBF09620007C626 /* TabControlView.swift */; };
 		E5B65B4D2CBF09620007C626 /* TempControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B65B4A2CBF09620007C626 /* TempControlView.swift */; };
+		E5B65B542CBF11A40007C626 /* House@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B65B4E2CBF11A30007C626 /* House@3x.png */; };
+		E5B65B552CBF11A40007C626 /* House@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B65B4F2CBF11A30007C626 /* House@1x.png */; };
+		E5B65B562CBF11A40007C626 /* Temperature@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B65B502CBF11A30007C626 /* Temperature@1x.png */; };
+		E5B65B572CBF11A40007C626 /* Temperature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B65B512CBF11A30007C626 /* Temperature@2x.png */; };
+		E5B65B582CBF11A40007C626 /* Temperature@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B65B522CBF11A30007C626 /* Temperature@3x.png */; };
+		E5B65B592CBF11A40007C626 /* House@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5B65B532CBF11A40007C626 /* House@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		E5B65B482CBF09620007C626 /* MortControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MortControlView.swift; sourceTree = "<group>"; };
 		E5B65B492CBF09620007C626 /* TabControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlView.swift; sourceTree = "<group>"; };
 		E5B65B4A2CBF09620007C626 /* TempControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempControlView.swift; sourceTree = "<group>"; };
+		E5B65B4E2CBF11A30007C626 /* House@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House@3x.png"; sourceTree = "<group>"; };
+		E5B65B4F2CBF11A30007C626 /* House@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House@1x.png"; sourceTree = "<group>"; };
+		E5B65B502CBF11A30007C626 /* Temperature@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Temperature@1x.png"; sourceTree = "<group>"; };
+		E5B65B512CBF11A30007C626 /* Temperature@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Temperature@2x.png"; sourceTree = "<group>"; };
+		E5B65B522CBF11A30007C626 /* Temperature@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Temperature@3x.png"; sourceTree = "<group>"; };
+		E5B65B532CBF11A40007C626 /* House@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,7 @@
 				E5B65B482CBF09620007C626 /* MortControlView.swift */,
 				E5B65B4A2CBF09620007C626 /* TempControlView.swift */,
 				E5B65B3E2CBF07E30007C626 /* Assets.xcassets */,
+				E5B65B5A2CBF14B00007C626 /* Images */,
 				E5B65B402CBF07E30007C626 /* Preview Content */,
 			);
 			path = Assignment3;
@@ -74,6 +87,19 @@
 				E5B65B412CBF07E30007C626 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5B65B5A2CBF14B00007C626 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E5B65B522CBF11A30007C626 /* Temperature@3x.png */,
+				E5B65B532CBF11A40007C626 /* House@2x.png */,
+				E5B65B4E2CBF11A30007C626 /* House@3x.png */,
+				E5B65B512CBF11A30007C626 /* Temperature@2x.png */,
+				E5B65B502CBF11A30007C626 /* Temperature@1x.png */,
+				E5B65B4F2CBF11A30007C626 /* House@1x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +160,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B65B552CBF11A40007C626 /* House@1x.png in Resources */,
+				E5B65B572CBF11A40007C626 /* Temperature@2x.png in Resources */,
+				E5B65B582CBF11A40007C626 /* Temperature@3x.png in Resources */,
 				E5B65B422CBF07E30007C626 /* Preview Assets.xcassets in Resources */,
 				E5B65B3F2CBF07E30007C626 /* Assets.xcassets in Resources */,
+				E5B65B592CBF11A40007C626 /* House@2x.png in Resources */,
+				E5B65B542CBF11A40007C626 /* House@3x.png in Resources */,
+				E5B65B562CBF11A40007C626 /* Temperature@1x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
