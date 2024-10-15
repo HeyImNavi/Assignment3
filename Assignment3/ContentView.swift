@@ -2,23 +2,21 @@
 //  ContentView.swift
 //  Assignment3
 //
-//  Created by Maggie Thomas on 10/15/24.
+//  CCSI 321 - Assignment 3
+//  Created by Aaron Arreola and Calvin Darley
+//  Due 10/29/2024
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        
+        Text("Hello")
+        
+    }//end of body View
+}//end of Struct View
 
 #Preview {
     ContentView()
-}
+}//end of preview
