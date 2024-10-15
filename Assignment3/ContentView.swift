@@ -13,6 +13,7 @@ struct ContentView: View {
     var body: some View {
         
         Text("Hello")
+        Text("second")
         
     }//end of body View
 }//end of Struct View
