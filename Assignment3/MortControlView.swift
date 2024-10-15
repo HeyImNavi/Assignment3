@@ -13,8 +13,21 @@ import SwiftUI
 struct MortControlView: View {
     var body: some View {
         
-        Text("Hooray")
-        
+        VStack {
+            //Title Text
+            Text("Loan Calculator")
+                //Properties for Title
+                .font(.title)
+                .bold()
+                .multilineTextAlignment(.center)
+                .padding()
+            
+            //Push Text to the top of the screen
+            Spacer()
+        }//end of VStack
     }//end of body View
 }//end of struct View
 
+#Preview {
+    MortControlView()
+}//end of Preview

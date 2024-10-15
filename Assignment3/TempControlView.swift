@@ -17,3 +17,7 @@ struct TempControlView: View {
         
     }//end of body View
 }//end of struct View
+
+#Preview {
+    TempControlView()
+}//end of Preview
