@@ -13,7 +13,18 @@ import SwiftUI
 struct TempControlView: View {
     var body: some View {
         
-        Text("Yippee")
+        VStack {
+            //Title Text
+            Text("Temperature Conversion")
+                //Properties for Title
+                .font(.title)
+                .bold()
+                .multilineTextAlignment(.center)
+                .padding()
+        }//end of VStack
+        
+        //Push text to the top of screen
+        Spacer()
         
     }//end of body View
 }//end of struct View
