@@ -10,7 +10,17 @@
 
 import SwiftUI
 
+enum Temp: String, Identifiable, CaseIterable {
+    var id: String { self.rawValue }
+    
+    case Farenheight
+    case Celsius
+}
+
 struct TempControlView: View {
+    @State private var selectedTemp = 0
+    var temperatures = [Array(-129...134), Array(-90...57)]
+    
     var body: some View {
         
         VStack {
@@ -20,7 +30,29 @@ struct TempControlView: View {
                 .font(.title)
                 .bold()
                 .multilineTextAlignment(.center)
-                .padding()
+                //.padding()
+            
+            Picker("Temp", selection: $selectedTemp) {
+                //ForEach Loop
+                Text("\u{2109} \u{2B62} \u{2103}").tag(0)
+                Text("\u{2103} \u{2B62} \u{2109}").tag(1)
+            }//end of Picker
+            .padding(.horizontal)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 2)
+            )
+            //properties to Shape Picker
+            .pickerStyle(.segmented)
+            
+            
+            if selectedTemp == 0 {
+                
+            }
+            else if selectedTemp == 1 {
+                
+            }
+            
         }//end of VStack
         
         //Push text to the top of screen
@@ -30,5 +62,5 @@ struct TempControlView: View {
 }//end of struct View
 
 #Preview {
-    TempControlView()
+    ContentView()
 }//end of Preview

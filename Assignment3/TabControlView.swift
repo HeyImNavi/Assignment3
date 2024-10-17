@@ -30,5 +30,5 @@ struct TabControlView: View {
 }//end of struct View
 
 #Preview {
-    TabControlView()
+    ContentView()
 }//end of Preview
