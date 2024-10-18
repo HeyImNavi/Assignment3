@@ -11,6 +11,8 @@ import SwiftUI
 
 struct TabControlView: View {
     var body: some View {
+        
+        //create tabs
         TabView {
             //Tab for Temperature
             TempControlView()
@@ -18,7 +20,6 @@ struct TabControlView: View {
                 .tabItem {
                     Label("Temperature", image: "Temperature")
                 }//end of tabItem
-            
             //Tab for Mortage
             MortControlView()
                 //properties
@@ -30,5 +31,5 @@ struct TabControlView: View {
 }//end of struct View
 
 #Preview {
-    ContentView()
+    TabControlView()
 }//end of Preview

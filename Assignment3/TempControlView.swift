@@ -18,7 +18,9 @@ enum Temp: String, Identifiable, CaseIterable {
 }
 
 struct TempControlView: View {
+    
     @State private var selectedTemp = 0
+    
     var temperatures = [Array(-129...134), Array(-90...57)]
     
     var body: some View {
@@ -62,5 +64,5 @@ struct TempControlView: View {
 }//end of struct View
 
 #Preview {
-    ContentView()
+    TempControlView()
 }//end of Preview

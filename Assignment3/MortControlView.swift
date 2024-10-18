@@ -122,5 +122,5 @@ struct MortControlView: View {
 }//end of struct View
 
 #Preview {
-    ContentView()
+    MortControlView()
 }//end of Preview
