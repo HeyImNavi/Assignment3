@@ -23,7 +23,6 @@ struct MortControlView: View {
     
     @State private var showAlert = false //flag to check if an alert should be shown
     @State private var calculate = false //flag to check if calculate should be active
-    @State private var isEditing = false //flag to check if editing is valid
     
     var body: some View {
         
@@ -44,40 +43,43 @@ struct MortControlView: View {
                 .padding(.horizontal)
             
             //Slider for Interest
-            Slider(
-                value: $interest,
-                in: 1...30,
-                onEditingChanged: { editing in
-                    isEditing = editing
-                }//end of onEditingChanged
-            ) //end of slider
+            Slider(value: $interest, in: 1...30)
+                //properties for slider
+                .padding()
             
             HStack {
                 //Text that displays text rate
                 Text ("Annual Rate")
+                    .frame(alignment: .leading) // Align text to the left
+                    .padding()
+                
+                //create spaces between elements
+                Spacer()
                 
                 //Shows the interest
                 Text(String(format: "%.2f", interest))
-                            .foregroundColor(isEditing ? .blue : .blue)
+                    .frame(alignment: .trailing) // Align text to the right
+                    .padding()
             }//end of HStack
             
             //Slider for Years
-            Slider(
-                value: $years,
-                in: 10...30,
-                step: 1,
-                onEditingChanged: { editing in
-                    isEditing = editing
-                }//end of onEditingChanged
-            ) //end of slider
+            Slider(value: $years, in: 10...30, step: 1)
+                //properties of slider
+                .padding()
             
             HStack {
                 //Text that displays text rate
                 Text ("Number of Years")
+                    .frame(alignment: .leading) // Align text to the left
+                    .padding()
+                
+                //create space between elements
+                Spacer()
                 
                 //Shows the interest
                 Text(String(format: "%.0f", years))
-                            .foregroundColor(isEditing ? .blue : .blue)
+                    .frame(alignment: .leading) // Align text to the left
+                    .padding()
             }//end of HStack
             
             /*
@@ -135,7 +137,7 @@ struct MortControlView: View {
         }//end of else statement
         
         //value for interest
-        let R = interest
+        let R = interest / 100
         
         //value for years
         let N = years
@@ -143,10 +145,11 @@ struct MortControlView: View {
         //variable to hold the result
         var result: Double
         
-        result = 1.0
+        let numerator = (P * R * pow(1.0 + R, Double(N)))
+        let denominator = (pow(1.0 + R, Double(N)) - 1.0)
         
         //Calculate result
-        result = P + R + N
+        result = (numerator / denominator) / 12
         
         //Update resultText
         resultText = String(format: "%.2f", result)
