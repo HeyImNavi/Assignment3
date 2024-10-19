@@ -47,7 +47,6 @@ struct TempControlView: View {
             //properties to Shape Picker
             .pickerStyle(.segmented)
             
-            
             if selectedTemp == 0 {
                 
             }

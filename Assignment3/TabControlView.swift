@@ -18,13 +18,13 @@ struct TabControlView: View {
             TempControlView()
                 //properties
                 .tabItem {
-                    Label("Temperature", image: "Temperature")
-                }//end of tabItem
+                    Label("Temperature", systemImage: "thermometer.transmission")
+                }//end of tabItems
             //Tab for Mortage
             MortControlView()
                 //properties
                 .tabItem {
-                    Label("Mortgage", image: "House")
+                    Label("Mortgage", systemImage: "house.fill")
                 }//end of tabItem
         }//end of TabView
     }//end of body View
