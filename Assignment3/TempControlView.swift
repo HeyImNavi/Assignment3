@@ -54,11 +54,10 @@ struct TempControlView: View {
                 
             }
             
+            //Push text to the top of screen
+            Spacer()
+            
         }//end of VStack
-        
-        //Push text to the top of screen
-        Spacer()
-        
     }//end of body View
 }//end of struct View
 
