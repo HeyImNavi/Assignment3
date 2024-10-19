@@ -34,19 +34,21 @@ struct TempControlView: View {
                 .multilineTextAlignment(.center)
                 //.padding()
             
+            //Picker to choose the temperature
             Picker("Temp", selection: $selectedTemp) {
                 //ForEach Loop
                 Text("\u{2109} \u{2B62} \u{2103}").tag(0)
                 Text("\u{2103} \u{2B62} \u{2109}").tag(1)
             }//end of Picker
-            .padding(.horizontal)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.white, lineWidth: 2)
-            )
-            //properties to Shape Picker
-            .pickerStyle(.segmented)
+                //properties of the picker
+                .padding(.horizontal)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.white, lineWidth: 2)
+                )
+                .pickerStyle(.segmented)
             
+            //check to see what temperature conversion they wanted
             if selectedTemp == 0 {
                 
             }
