@@ -14,15 +14,19 @@ struct MortControlView: View {
     
     //variables
     @State private var iniMort = "" //holds initial mortgage
-    @State private var interest = "" //holds interest rate
+    @State private var interest: Double = 0.0 //holds interest rate
+    
+    /*
     @State private var annRate =  "" //holds annual rate
     @State private var years = "" //holds # of years
+    */
+     
     @State private var resultText = "0.00" //holds calculated result
-    
     @State private var errorMessage = "" //holds error message
     
     @State private var showAlert = false //flag to check if an alert should be shown
     @State private var calculate = false //flag to check if calculate should be active
+    @State private var isEditing = false //flag to check if editing is valid
     
     var body: some View {
         
@@ -42,26 +46,23 @@ struct MortControlView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
             
-            //TextField for Interest
-            TextField("Interest", text: $interest)
-            //properties for width text field
-                .keyboardType(.decimalPad)
-                .textFieldStyle(.roundedBorder)
-                .padding(.horizontal)
+            //Slider
+            Slider(
+                value: $interest,
+                in: 1...30,
+                onEditingChanged: { editing in
+                    isEditing = editing
+                }//end of onEditingChanged
+            )
             
-            //TextField for Annnual Rates
-            TextField("Annual Rate", text: $annRate)
-            //properties for width text field
-                .keyboardType(.decimalPad)
-                .textFieldStyle(.roundedBorder)
-                .padding(.horizontal)
-            
+            /*
             //TextField for # of Years
             TextField("Number of Years", text: $years)
             //properties for width text field
                 .keyboardType(.decimalPad)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
+             */
             
             //Calculate Button
             Button("Compute Area") {
@@ -90,33 +91,39 @@ struct MortControlView: View {
             //Push Text to the top of the screen
             Spacer()
         }//end of VStack
+        
+        //Display error message
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text(errorMessage))
+        }//end of alert
+        
     }//end of body View
     
     //compute the value of the monthly loan
     func compute() -> Bool {
         
         //getting value for initalMortage
-        guard let initialMortgage = Double(iniMort) else {//error check radius
+        guard let P = Double(iniMort) else {//error check initialMortgage
             errorMessage = "Please enter a valid value for the Initial Mortgage"
             showAlert = true
             return false
         }//end of else statement
         
-        //getting value for P
-        guard let P = Double(iniMort) else {//error check radius
-            errorMessage = "Please enter a valid value for the Initial Mortgage"
-            showAlert = true
-            return false
-        }//end of else statement
+        //value for interest
+        var R = interest
         
+        //variable to hold the result
         var result: Double
         
         result = 1.0
         
         //Calculate result
+        result = P + R
         
+        //Update resultText
         resultText = String(format: "%.2f", result)
         
+        //Compute function works
         return true
     }//end of compute
 }//end of struct View
