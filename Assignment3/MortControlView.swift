@@ -14,12 +14,9 @@ struct MortControlView: View {
     
     //variables
     @State private var iniMort = "" //holds initial mortgage
-    @State private var interest: Double = 0.0 //holds interest rate
+    @State private var interest: Double = 1.0 //holds interest rate
+    @State private var years: Double = 10 //holds # of years
     
-    /*
-    @State private var annRate =  "" //holds annual rate
-    @State private var years = "" //holds # of years
-    */
      
     @State private var resultText = "0.00" //holds calculated result
     @State private var errorMessage = "" //holds error message
@@ -33,7 +30,7 @@ struct MortControlView: View {
         VStack {
             //Title Text
             Text("Loan Calculator")
-                //Properties for Title
+            //Properties for Title
                 .font(.title)
                 .bold()
                 .multilineTextAlignment(.center)
@@ -46,14 +43,42 @@ struct MortControlView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
             
-            //Slider
+            //Slider for Interest
             Slider(
                 value: $interest,
                 in: 1...30,
                 onEditingChanged: { editing in
                     isEditing = editing
                 }//end of onEditingChanged
-            )
+            ) //end of slider
+            
+            HStack {
+                //Text that displays text rate
+                Text ("Annual Rate")
+                
+                //Shows the interest
+                Text(String(format: "%.2f", interest))
+                            .foregroundColor(isEditing ? .blue : .blue)
+            }//end of HStack
+            
+            //Slider for Years
+            Slider(
+                value: $years,
+                in: 10...30,
+                step: 1,
+                onEditingChanged: { editing in
+                    isEditing = editing
+                }//end of onEditingChanged
+            ) //end of slider
+            
+            HStack {
+                //Text that displays text rate
+                Text ("Number of Years")
+                
+                //Shows the interest
+                Text(String(format: "%.0f", years))
+                            .foregroundColor(isEditing ? .blue : .blue)
+            }//end of HStack
             
             /*
             //TextField for # of Years
@@ -110,7 +135,10 @@ struct MortControlView: View {
         }//end of else statement
         
         //value for interest
-        var R = interest
+        let R = interest
+        
+        //value for years
+        let N = years
         
         //variable to hold the result
         var result: Double
@@ -118,7 +146,7 @@ struct MortControlView: View {
         result = 1.0
         
         //Calculate result
-        result = P + R
+        result = P + R + N
         
         //Update resultText
         resultText = String(format: "%.2f", result)
