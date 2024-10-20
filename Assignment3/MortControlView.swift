@@ -50,13 +50,14 @@ struct MortControlView: View {
                 //Text that displays text rate
                 Text ("Annual Rate")
                     .frame(alignment: .leading) // Align text to the left
+                    .bold()
                     .padding()
                 
                 //create spaces between elements
                 Spacer()
                 
                 //Shows the interest
-                Text(String(format: "%.2f", interest))
+                Text(String(format: "%.2f%%", interest))
                     .frame(alignment: .trailing) // Align text to the right
                     .padding()
             }//end of HStack
@@ -70,6 +71,7 @@ struct MortControlView: View {
                 //Text that displays text rate
                 Text ("Number of Years")
                     .frame(alignment: .leading) // Align text to the left
+                    .bold()
                     .padding()
                 
                 //create space between elements
