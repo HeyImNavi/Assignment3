@@ -43,8 +43,7 @@ struct MortControlView: View {
                 .padding(.horizontal)
             
             //Slider for Interest
-            Slider(value: $interest, in: 1...30)
-                //properties for slider
+            Slider(value: $interest, in: 1...30) //properties for slider
                 .padding()
             
             HStack {
@@ -81,15 +80,6 @@ struct MortControlView: View {
                     .frame(alignment: .leading) // Align text to the left
                     .padding()
             }//end of HStack
-            
-            /*
-            //TextField for # of Years
-            TextField("Number of Years", text: $years)
-            //properties for width text field
-                .keyboardType(.decimalPad)
-                .textFieldStyle(.roundedBorder)
-                .padding(.horizontal)
-             */
             
             //Calculate Button
             Button("Compute Area") {
