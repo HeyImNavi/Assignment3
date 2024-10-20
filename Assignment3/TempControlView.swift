@@ -51,10 +51,10 @@ struct TempControlView: View {
             //check to see what temperature conversion they wanted
             if selectedTemp == 0 {
                 
-            }
+            }//end of if statement
             else if selectedTemp == 1 {
                 
-            }
+            }//end of else if statement
             
             //Push text to the top of screen
             Spacer()
