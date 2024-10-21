@@ -32,7 +32,7 @@ struct TempControlView: View {
                 .font(.title)
                 .bold()
                 .multilineTextAlignment(.center)
-                //.padding()
+                .padding()
             
             //Picker to choose the temperature
             Picker("Temp", selection: $selectedTemp) {
