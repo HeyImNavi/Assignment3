@@ -43,7 +43,7 @@ struct MortControlView: View {
                 .padding(.horizontal)
             
             //Slider for Interest
-            Slider(value: $interest, in: 1...30, minimumValueLabel: Text("1"), maximumValueLabel: Text("30")) {}//properties for slider
+            Slider(value: $interest, in: 1...20, minimumValueLabel: Text("1"), maximumValueLabel: Text("20")) {}//properties for slider
                 .padding()
             
             HStack {
