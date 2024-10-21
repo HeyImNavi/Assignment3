@@ -43,7 +43,7 @@ struct MortControlView: View {
                 .padding(.horizontal)
             
             //Slider for Interest
-            Slider(value: $interest, in: 1...30) //properties for slider
+            Slider(value: $interest, in: 1...30, minimumValueLabel: Text("1"), maximumValueLabel: Text("30")) {}//properties for slider
                 .padding()
             
             HStack {
@@ -63,7 +63,7 @@ struct MortControlView: View {
             }//end of HStack
             
             //Slider for Years
-            Slider(value: $years, in: 10...30, step: 1)
+            Slider(value: $years, in: 10...30, step: 1, minimumValueLabel: Text("10"), maximumValueLabel: Text("30")){}
                 //properties of slider
                 .padding()
             
@@ -128,11 +128,11 @@ struct MortControlView: View {
             return false
         }//end of else statement
         
-        //value for interest
-        let R = interest / 100
+        //value for monthly interest
+        let R = interest / 100.0 / 12.0
         
-        //value for years
-        let N = years
+        //value for number of monthly payments
+        let N = years * 12
         
         //variable to hold the result
         var result: Double
@@ -141,7 +141,7 @@ struct MortControlView: View {
         let denominator = (pow(1.0 + R, Double(N)) - 1.0)
         
         //Calculate result
-        result = (numerator / denominator) / 12
+        result = (numerator / denominator)
         
         //Update resultText
         resultText = String(format: "%.2f", result)
