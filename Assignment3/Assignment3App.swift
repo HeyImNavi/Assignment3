@@ -2,7 +2,9 @@
 //  Assignment3App.swift
 //  Assignment3
 //
-//  Created by Maggie Thomas on 10/15/24.
+//  CCSI 321 - Assignment 3
+//  Created by Aaron Arreola and Calvin Darley
+//  Due 10/29/2024
 //
 
 import SwiftUI
