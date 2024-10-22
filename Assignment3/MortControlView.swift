@@ -84,17 +84,17 @@ struct MortControlView: View {
             }//end of HStack
             
             //Calculate Button
-            Button("Compute Area") {
+            Button("Calculate") {
                 if compute() {
                     calculate = true
                 }//end of compute
             }//end of button
                 //properties of button
                 .background (
-                    Color.white
+                    Color.black
                         .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                        .frame(width: 140,height: 50))
-                .foregroundColor(.black)
+                        .frame(width: 110,height: 50))
+                .foregroundColor(.white)
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .padding(.vertical)
 

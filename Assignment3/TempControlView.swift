@@ -20,8 +20,14 @@ enum Temp: String, Identifiable, CaseIterable {
 struct TempControlView: View {
     
     @State private var selectedTemp = 0
+    @State private var pickerIndexF = 161
+    @State private var pickerIndexC = 90
+    @State private var convertedToC: Double = 0.0
+    @State private var convertedToF: Double = 32.0
+    @State private var temp: Double = 0.0
     
     var temperatures = [Array(-129...134), Array(-90...57)]
+    
     
     var body: some View {
         
@@ -50,10 +56,42 @@ struct TempControlView: View {
             
             //check to see what temperature conversion they wanted
             if selectedTemp == 0 {
+                VStack {
+                    Picker("F to C", selection: $pickerIndexF) {
+                        ForEach(0..<temperatures[0].count, id: \.self) { index in Text("\(temperatures[0][index]) \u{2109}")
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .onChange(of: pickerIndexF) { value in
+                        let temp = Double(temperatures[0][value])
+                        
+                        convertedToC = (temp - 32) * (5/9)
+                    }
+                    
+                    
+                    Text("\(convertedToC, specifier: "%.2f") \u{2103}")
+                        .bold()
+                }
                 
             }//end of if statement
             else if selectedTemp == 1 {
-                
+                VStack {
+                    Picker("F to C", selection: $pickerIndexC) {
+                        ForEach(0..<temperatures[1].count, id: \.self) { index in Text("\(temperatures[1][index]) \u{2103}")
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    
+                    .onChange(of: pickerIndexC) { value in
+                        let temp = Double(temperatures[1][value])
+                        
+                        convertedToF = ((9/5) * temp) + 32
+                    }
+                    
+                    
+                    Text("\(convertedToF, specifier: "%.2f") \u{2109}")
+                        .bold()
+                }
             }//end of else if statement
             
             //Push text to the top of screen
